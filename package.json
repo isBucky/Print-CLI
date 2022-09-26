@@ -16,7 +16,7 @@
   "dependencies": {
     "bucky.js": "latest",
     "commander": "latest",
-    "inquirer": "latest",
+    "inquirer": "^8.2.4",
     "puppeteer": "latest"
   }
 }

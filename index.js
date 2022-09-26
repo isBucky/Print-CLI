@@ -2,13 +2,13 @@
 
 'use strict';
 
-const { userAgents } = require('./userAgents.json'),
-  { writeFile } = require('node:fs/promises'),
+const { writeFile, mkdir } = require('node:fs/promises'),
+  { userAgents } = require('./userAgents.json'),
+  { isURL, isDirectory } = require('bucky.js'),
   _package = require('./package.json'),
-  { isURL } = require('bucky.js'),
-  inquirer = require('inquirer')
- Puppeteer = require('puppeteer');
-
+  inquirer = require('inquirer'),
+  Puppeteer = require('puppeteer');
+  
 class Print {
   constructor() {}
   
@@ -55,12 +55,13 @@ class Print {
   async screenshot(page, answers) {
     try {
       const image = await page.screenshot({ type: 'png', fullPage: !!answers.fullPage });
+      if (!isDirectory('~/uploads')) await mkdir('~/uploads', { recursive: true });
       await writeFile(
         `~/uploads/${(new URL(answers.url)).hostname}.png`,
         image, { encoding: null }
       );
     } catch(err) {
-      
+      console.log(err);
     }
   }
 }
