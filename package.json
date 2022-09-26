@@ -1,0 +1,22 @@
+{
+  "name": "Print-CLI",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "yarn && npm i -g",
+    "start": "node --no-warnings=ExperimentalWarnings --experimental-json-modules ."
+  },
+  "keywords": [],
+  "author": "Bucky.br <bucky.developer@gmail.com>",
+  "license": "Apache-2.0",
+  "bin": {
+    "print": "/index.js"
+  },
+  "dependencies": {
+    "bucky.js": "latest",
+    "commander": "latest",
+    "inquirer": "latest",
+    "puppeteer": "latest"
+  }
+}
