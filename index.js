@@ -3,11 +3,11 @@
 'use strict';
 
 const { writeFile, mkdir } = require('node:fs/promises'),
-  { userAgents } = require('./userAgents.json'),
-  { isURL, isDirectory } = require('bucky.js'),
-  _package = require('./package.json'),
-  inquirer = require('inquirer'),
-  Puppeteer = require('puppeteer');
+{ userAgents } = require('./userAgents.json'),
+{ isURL, isDirectory } = require('bucky.js'),
+_package = require('./package.json'),
+inquirer = require('inquirer'),
+Puppeteer = require('puppeteer');
   
 class Print {
   constructor() {}
